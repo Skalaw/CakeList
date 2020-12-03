@@ -13,7 +13,8 @@ class CakesViewModel(private val cakeApi: CakeApi) : ViewModel() {
         // TODO: add error handling
         cakeApi.fetchCakes()
             .subscribe { response ->
-                cakeLiveData.postValue(response)
+                val sortedAndNoDuplicateList = response.distinctBy { it.title }.sortedBy { it.title }
+                cakeLiveData.postValue(sortedAndNoDuplicateList)
             }
     }
 }
