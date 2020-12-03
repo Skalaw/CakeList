@@ -2,6 +2,7 @@ package com.rocksolidapps.cake.di
 
 import com.rocksolidapps.cake.BuildConfig
 import com.rocksolidapps.cake.api.CakeApi
+import com.rocksolidapps.cake.api.ServiceProvider
 import com.rocksolidapps.cake.api.network.RetrofitServiceProvider
 import com.squareup.moshi.Moshi
 import okhttp3.OkHttpClient
@@ -14,7 +15,7 @@ const val ENDPOINT = "https://gist.githubusercontent.com/"
 val restModule = module {
     single { getOkHttpClient() }
     single { getMoshi() }
-    single { RetrofitServiceProvider(ENDPOINT, get(), get()) }
+    single { RetrofitServiceProvider(ENDPOINT, get(), get()) as ServiceProvider }
     single { CakeApi(get()) }
 }
 

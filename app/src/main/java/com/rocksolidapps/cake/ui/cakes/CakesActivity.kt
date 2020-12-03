@@ -12,6 +12,13 @@ class CakesActivity : BaseActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_cakes)
+        initView()
+        if (savedInstanceState == null) {
+            viewModel.fetchCakes()
+        }
+    }
+
+    private fun initView() {
         setSupportActionBar(toolbar)
         toolbar.setTitle(R.string.cakes)
     }
