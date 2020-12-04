@@ -19,6 +19,7 @@ class CakesActivity : BaseActivity() {
         initView()
 
         viewModel.cakeLiveData.observe(this, { list ->
+            swipeRefresh.isRefreshing = false
             cakeAdapter.submitList(list)
         })
 
@@ -35,5 +36,6 @@ class CakesActivity : BaseActivity() {
             adapter = cakeAdapter
             addItemDecoration(DividerItemDecoration(context, DividerItemDecoration.VERTICAL))
         }
+        swipeRefresh.setOnRefreshListener { viewModel.fetchCakes() }
     }
 }
