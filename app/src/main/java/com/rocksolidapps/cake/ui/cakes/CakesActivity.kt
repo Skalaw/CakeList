@@ -35,6 +35,7 @@ class CakesActivity : BaseActivity() {
         with(rvCake) {
             adapter = cakeAdapter
             addItemDecoration(DividerItemDecoration(context, DividerItemDecoration.VERTICAL))
+            // TODO: ListAdapter have default animation for add items, remove items, change content (see: CakeAdapter -> CakeDiffCallback), to check reaction just change json object from http. If you wanna see more animations, just need to implement itemAnimator here instead Default animations
         }
         swipeRefresh.setOnRefreshListener { viewModel.fetchCakes() }
     }
