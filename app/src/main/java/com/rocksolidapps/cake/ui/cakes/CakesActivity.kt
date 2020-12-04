@@ -8,8 +8,8 @@ import kotlinx.android.synthetic.main.activity_cakes.*
 import kotlinx.android.synthetic.main.toolbar.*
 import org.koin.androidx.viewmodel.ext.android.viewModel
 
-class CakesActivity : BaseActivity() {
-    val viewModel: CakesViewModel by viewModel()
+class CakesActivity : BaseActivity<CakesViewModel>() {
+    override val viewModel: CakesViewModel by viewModel()
 
     private lateinit var cakeAdapter: CakeAdapter
 
