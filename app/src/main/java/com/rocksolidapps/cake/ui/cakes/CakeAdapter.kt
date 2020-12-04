@@ -1,7 +1,9 @@
 package com.rocksolidapps.cake.ui.cakes
 
 import android.view.LayoutInflater
+import android.view.View
 import android.view.ViewGroup
+import android.widget.Toast
 import androidx.databinding.DataBindingUtil
 import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.ListAdapter
@@ -24,6 +26,7 @@ class CakeAdapter : ListAdapter<Cake, CakeAdapter.CakeViewHolder>(CakeDiffCallba
         fun bind(item: Cake) {
             with(binding) {
                 cake = item
+                clickListener = View.OnClickListener { Toast.makeText(binding.root.context, item.desc, Toast.LENGTH_SHORT).show() }
                 executePendingBindings()
             }
         }

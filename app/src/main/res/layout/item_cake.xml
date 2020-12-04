@@ -6,6 +6,10 @@
     <data>
 
         <variable
+            name="clickListener"
+            type="android.view.View.OnClickListener" />
+
+        <variable
             name="cake"
             type="com.rocksolidapps.cake.api.model.Cake" />
     </data>
@@ -15,6 +19,7 @@
         android:layout_height="wrap_content"
         android:layout_margin="16dp"
         android:foreground="?attr/selectableItemBackground"
+        android:onClick="@{clickListener}"
         app:cardElevation="4dp">
 
         <androidx.constraintlayout.widget.ConstraintLayout
