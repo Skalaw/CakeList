@@ -30,7 +30,6 @@ class CakesActivity : BaseActivity<CakesViewModel>() {
 
     private fun initView() {
         setSupportActionBar(toolbar)
-        toolbar.setTitle(R.string.cakes)
         cakeAdapter = CakeAdapter()
         with(rvCake) {
             adapter = cakeAdapter
